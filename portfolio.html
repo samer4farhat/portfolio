@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="portfolio.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("ZTh8dEDpHM1V1VEfg");
+        })();
+    </script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure class="nav__logo">
+                <img src="https://i.etsystatic.com/9012476/r/il/e5d8b3/665109971/il_fullxfull.665109971_8uq9.jpg" id="personal__logo" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    " onclick="toggleModal()">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    " onclick="toggleModal()">Contact</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fas fa-adjust" aria-hidden="true" onclick="toggleContrast()"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <div class="header__content">
+                <div class="title">I'm <span class="orange">Samer Farhat</span></div>
+                <hr>
+                <div class="title title--secondary">Full-Stack Developer</div>
+                <div class="social__list">
+                    <a href="" class="social__link click" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="" class="social__link click" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </header>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here is a bit about <span class="orange">me</span></h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Full-Stack developer</h4>
+                <p class="modal__para">
+                    I'm a 21 year-old <span class="orange">full-stack developer</span> with a strong passion for developing websites with great user experiences.
+                    <br>
+                    I'm currently a senior in the American University of Beirut, majoring in <span class="orange">Computer and Communications Engineering</span>. 
+                    <br>
+                    I enjoy solving engineering problems alongside individuals with similar passion and dedication.
+                </p>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input type="text" name="user_name" class="input" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input type="email" name="user_email" class="input" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea type="text" name="message" class="input" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <a href="#">
+        <button class="mail click" onclick="toggleModal()">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </button>
+    </a>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    My <span class="orange">Projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/Frontend Simplified.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Personal Website</h3>
+                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                                <p class="project__description--para">First website I built to showcase me</p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure class="footer__logo">
+                    <a href="#"><img src="https://i.etsystatic.com/9012476/r/il/e5d8b3/665109971/il_fullxfull.665109971_8uq9.jpg" class="footer__logo--img" alt=""></a>
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">LinkedIn</a>
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    " onclick="toggleModal()">Email</a>
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Resume</a>
+                </div>
+                <div class="footer__copyright">Copyright © 2023 | Samer Farhat</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
